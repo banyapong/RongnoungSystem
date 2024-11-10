@@ -15,12 +15,6 @@ username = 'cdex-admin'                         # Replace with your database use
 password = '$D1nKxRwOGMQf8Mf'                         # Replace with your database password
 driver = 'ODBC Driver 18 for SQL Server'
 
-# server = 'codex.database.windows.net'  # Replace with your server name
-# database = 'final'                    # Replace with your database name
-# username = 'codex'                         # Replace with your database username
-# password = 'Cdex1234'                         # Replace with your database password
-# driver = 'ODBC Driver 18 for SQL Server'
-
 app.config['SQLALCHEMY_DATABASE_URI'] = f'mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
