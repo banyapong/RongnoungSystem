@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
-<h1>HomePAGE</h1>
+<a class="compose" href="{{ url_for('user', id=session['user_id']) }}">GET STARTED!!!</a>
 {% endblock %}
