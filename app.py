@@ -9,12 +9,17 @@ from email_validator import validate_email, EmailNotValidError
 app = Flask(__name__)
 app.secret_key = 'secret'
 
-# Database configuration for Azure SQL Database
-server = 'finalprojectcdex-server..database.windows.net'  # Replace with your server name
-database = 'finalprojectcdex-database'                    # Replace with your database name
-username = 'finalprojectcdex-server-admin'                         # Replace with your database username
+server = 'finalcdex-server.database.windows.net'  # Replace with your server name
+database = 'finalcdex-database'                    # Replace with your database name
+username = 'finalcdex-server-admin'                         # Replace with your database username
 password = '$D1nKxRwOGMQf8Mf'                         # Replace with your database password
 driver = 'ODBC Driver 18 for SQL Server'
+
+# server = 'codex.database.windows.net'  # Replace with your server name
+# database = 'final'                    # Replace with your database name
+# username = 'codex'                         # Replace with your database username
+# password = 'Cdex1234'                         # Replace with your database password
+# driver = 'ODBC Driver 18 for SQL Server'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = f'mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -47,8 +52,8 @@ class Email(db.Model):
 def index():
     if 'user_id' in session:
         user = User.query.get(session['user_id'])
-        return render_template('index.html', user=user)  # Pass the user object to the template
-    return render_template('index.html')
+        return render_template('user.html', user=user)  # Pass the user object to the template
+    return render_template('login.html')
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
