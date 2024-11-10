@@ -10,10 +10,10 @@ app = Flask(__name__)
 app.secret_key = 'secret'
 
 # Database configuration for Azure SQL Database
-server = 'codex.database.windows.net'  # Replace with your server name
-database = 'final'                    # Replace with your database name
-username = 'codex'                         # Replace with your database username
-password = 'Cdex1234'                         # Replace with your database password
+server = 'finalprojectcdex-server..database.windows.net'  # Replace with your server name
+database = 'finalprojectcdex-database'                    # Replace with your database name
+username = 'finalprojectcdex-server-admin'                         # Replace with your database username
+password = '$D1nKxRwOGMQf8Mf'                         # Replace with your database password
 driver = 'ODBC Driver 18 for SQL Server'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = f'mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}'
