@@ -9,9 +9,9 @@ from email_validator import validate_email, EmailNotValidError
 app = Flask(__name__)
 app.secret_key = 'secret'
 
-server = 'finalcdex-server.database.windows.net'  # Replace with your server name
-database = 'finalcdex-database'                    # Replace with your database name
-username = 'finalcdex-server-admin'                         # Replace with your database username
+server = 'cdex-server.database.windows.net'  # Replace with your server name
+database = 'cdex-db'                    # Replace with your database name
+username = 'cdex-admin'                         # Replace with your database username
 password = '$D1nKxRwOGMQf8Mf'                         # Replace with your database password
 driver = 'ODBC Driver 18 for SQL Server'
 
@@ -262,4 +262,4 @@ def delete_multiple_emails():
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run()
+    app.run(port=8050)
