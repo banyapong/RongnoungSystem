@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.secret_key = 'secret'
 
 server = 'cdex-server.database.windows.net'  # Replace with your server name
-database = 'cdex-db'                    # Replace with your database name
+database = 'cdex-database'                    # Replace with your database name
 username = 'cdex-admin'                         # Replace with your database username
 password = '$D1nKxRwOGMQf8Mf'                         # Replace with your database password
 driver = 'ODBC Driver 18 for SQL Server'
